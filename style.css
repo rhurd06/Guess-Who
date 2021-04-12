@@ -1,3 +1,9 @@
-.photoDivs {
-    flex-direction: row;
+#photoDivs {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.personImage{
+    margin: 10px;
 }

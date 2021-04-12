@@ -4,13 +4,15 @@ $(document).ready(onReady);
 
 function onReady() {
     addGithubUsers();
-    randomName();
+    $('#photoDivs').on('click', '.personImage', guessGithubUser );
+    pickMe();
 }//end onReady
+
 function addGithubUsers() {
     //loop through people
     for (let person of people){
         $('#photoDivs').append(`
-       <div>
+       <div id="${person.name}" class="personImage">
        <img src="https://github.com/${person.githubUsername}.png?size=250"
        alt="Profile image of ${person.name}"></img>
        </div>
@@ -18,7 +20,33 @@ function addGithubUsers() {
     }//end for loop
 }//end addPhotosToDom
 
-function randomName(min, max) {
-    let myPeople = people[Math.floor(Math.random() * people.length)];
-}//end randomName
+function randomNumber(min, max){
+    return Math.floor(Math.random() * (1 + max - min) + min);
+}//end randomNumber
 
+let randomness = randomNumber(0,people.length-1);
+
+console.log(randomness);
+
+console.log(people[randomness].name);
+
+function guessGithubUser() {
+    let itIsMe= $(this).attr('id')
+    if( itIsMe===people[randomness].name){
+        nextGuess();
+        pickMe();
+        alert('YAY!!!');
+    } else{
+        alert('BOO!!!Wrong Answer!')
+    }
+}//end guessGithubUser
+
+function pickMe() {
+    $('#meMeMe').empty();
+    $('#meMeMe').append(people[randomness].name);
+    
+}
+
+function nextGuess() {
+    randomness = randomNumber(0,people.length-1);
+}//end nextGuess
