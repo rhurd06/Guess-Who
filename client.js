@@ -4,7 +4,7 @@ $(document).ready(onReady);
 
 function onReady() {
     addGithubUsers();
-    randomNumber();
+    randomName();
 }//end onReady
 function addGithubUsers() {
     //loop through people
@@ -18,11 +18,7 @@ function addGithubUsers() {
     }//end for loop
 }//end addPhotosToDom
 
-function randomNumber(min, max) {
-    return Math.floor(Math.random( )*(1 + max-min) + min);
-}//end randomNumber
-
-
-
-
+function randomName(min, max) {
+    let myPeople = people[Math.floor(Math.random() * people.length)];
+}//end randomName
 
