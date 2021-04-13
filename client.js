@@ -38,7 +38,7 @@ function guessGithubUser() {
         alert('YAY!!!')
         $('.demo').fireworks({
             sound: true,
-            opacity: 0.9,
+            opacity: 0.6,
             width: '100%',
             height: '100%'
         });
