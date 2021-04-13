@@ -35,7 +35,13 @@ function guessGithubUser() {
     if( itIsMe===people[randomness].name){
         nextGuess();
         pickMe();
-        alert('YAY!!!');
+        alert('YAY!!!')
+        $('.demo').fireworks({
+            sound: true,
+            opacity: 0.9,
+            width: '100%',
+            height: '100%'
+        });
     } else{
         alert('BOO!!!Wrong Answer!')
     }
